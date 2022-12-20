@@ -154,7 +154,7 @@ export default {
         var obj = {
           user_email: this.email,
           user_name: this.name,
-          message_html: this.text,
+          message_html: this.message,
           to_name: "Arif Hidayat",
         };
 
