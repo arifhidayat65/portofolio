@@ -49,7 +49,7 @@ export default {
     return {
       linkedin: info.links.linkedin,
       github: info.links.github,
-      behance: info.links.behance,
+      angellist: info.links.angellist,
       resume: info.links.resume,
     };
   },
@@ -62,11 +62,11 @@ export default {
         case "github":
           window.open(this.github, "_blank");
           break;
-        case "behance":
-          window.open(this.behance, "_blank");
+        case "twitter":
+          window.open(this.twitter, "_blank");
           break;
-        case "resume":
-          window.open(this.resume, "_blank");
+        case "facebook":
+          window.open(this.facebook, "_blank");
           break;
       }
     },
