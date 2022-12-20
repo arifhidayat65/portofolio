@@ -131,7 +131,7 @@ export default {
     return {
       email: "",
       name: "",
-      message: "",
+      text: "",
       showSnackbar: false,
       snackbarMessage: "",
       snackbarColor: "",
@@ -153,8 +153,8 @@ export default {
       } else {
         var obj = {
           user_email: this.email,
-          user_name: this.name,
-          message_html: this.message,
+          from_name: this.name,
+          message_html: this.text,
           to_name: "Arif Hidayat",
         };
 
