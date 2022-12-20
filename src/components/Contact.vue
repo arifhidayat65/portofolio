@@ -109,6 +109,7 @@
       />
     </div>
   </div>
+  
 </template>
 
 <script>
@@ -145,44 +146,54 @@ export default {
         }, 1000);
       }
     },
+    // sendEmail() {
+    //   if (!this.email || !this.name || !this.text) {
+    //     this.showSnackbar = true;
+    //     this.snackbarMessage = "Please all the fields";
+    //     this.snackbarColor = "#64808E";
+    //   } else {
+    //     var obj = {
+    //       user_email: this.email,
+    //       user_name: this.name,
+    //       message_html: this.message,
+    //       to_name: "Arif Hidayat",
+    //     };
+
+    //     emailjs
+    //       .send(
+    //         config.emailjs.serviceID,
+    //         config.emailjs.templateID,
+    //         obj,
+    //         config.emailjs.publicKey
+    //       )
+    //       .then(
+    //         (result) => {
+    //           this.showSnackbar = true;
+    //           this.snackbarMessage = "Thanks! Message recieved.";
+    //           this.snackbarColor = "#1aa260";
+
+    //           this.email = "";
+    //           this.text = "";
+    //           this.name = "";
+    //         },
+    //         (error) => {
+    //           this.showSnackbar = true;
+    //           this.snackbarMessage = "Oops! Something went wrong.";
+    //           this.snackbarColor = "#64808E";
+    //         }
+    //       );
+    //   }
+    // },
+
+
     sendEmail() {
-      if (!this.email || !this.name || !this.text) {
-        this.showSnackbar = true;
-        this.snackbarMessage = "Please all the fields";
-        this.snackbarColor = "#64808E";
-      } else {
-        var obj = {
-          user_email: this.email,
-          user_name: this.name,
-          message_html: this.message,
-          to_name: "Arif Hidayat",
-        };
-
-        emailjs
-          .send(
-            config.emailjs.serviceID,
-            config.emailjs.templateID,
-            obj,
-            config.emailjs.publicKey
-          )
-          .then(
-            (result) => {
-              this.showSnackbar = true;
-              this.snackbarMessage = "Thanks! Message recieved.";
-              this.snackbarColor = "#1aa260";
-
-              this.email = "";
-              this.text = "";
-              this.name = "";
-            },
-            (error) => {
-              this.showSnackbar = true;
-              this.snackbarMessage = "Oops! Something went wrong.";
-              this.snackbarColor = "#64808E";
-            }
-          );
-      }
-    },
+      emailjs.sendForm('service_t6cqev9', 'template_gt71obu', this.$refs.form, 'pm21c6-ew7TX87210')
+        .then((result) => {
+            console.log('SUCCESS!', result.text);
+        }, (error) => {
+            console.log('FAILED...', error.text);
+        });
+    }
   },
 };
 </script>
