@@ -83,7 +83,10 @@ let info = {
     {
       title: "Language",
       info: [
-        "Python","Javascript","TypeScript","Java","C#"],
+        "Python","Javascript","TypeScript","Java","C#", "Typescript",
+        "C",
+        "C++",
+        "SQL"],
       icon: "fa fa-code"
     },
     {
@@ -94,8 +97,35 @@ let info = {
     },
     {
       title: "web technologies",
-      info: ["Vue", "React", "Node"],
+      info: ["Django", "Flask", "Spring", "Node", "Vue", "React", "HTML", "CSS"],
       icon: "fas fa-laptop-code"
+    },
+    {
+      title: "Databases",
+      info: ["Postgres", "MySQL", "MongoDB", "Elastic Search"],
+      icon: "fa fa-database"
+    },
+    {
+      title: "Proccess",
+      info: [
+        "Agile", "Scrum", "Jira", "Kanban", "Extreme programming","RUP"
+      ],
+      icon: "fa fa-cubes"
+    },
+    {
+      title: "Tools",
+      info: ["AWS", "Docker", "docker-compose", "Kubernets"],
+      icon: "fas fa-tools"
+    },
+    {
+      title: "Operating Systems",
+      info: [
+        "MacOS",
+        "Ubuntu",
+        "Windows",
+        "Android",
+      ],
+      icon: "fa fa-desktop"
     },
   ],
   portfolio_design: [
