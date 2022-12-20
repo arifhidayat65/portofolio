@@ -113,7 +113,7 @@
 
 <script>
 import config from "../../config";
-import emailjs from "emailjs-com";
+import emailjs from '@emailjs/browser';
 
 import Snackbar from "./helpers/Snackbar";
 
@@ -159,7 +159,7 @@ export default {
         };
 
         emailjs
-          .send(
+          .sendForm(
             config.emailjs.serviceID,
             config.emailjs.templateID,
             templateParams,
