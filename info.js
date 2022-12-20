@@ -1,6 +1,7 @@
 let info = {
-  name: "Mahy Mohab",
-  logo_name: "Mahy",
+  name: "Arif Hidayat",
+  status: "Software Engineer"
+  logo_name: "Arif",
   flat_picture: require("./src/assets/me.png"),
   config: {
     use_cookies: true,
@@ -9,20 +10,19 @@ let info = {
     }
   },
   description:
-    "hey there, I'm Mahy Mohab about to graduate from the computer and information technology KSU, SE department. A UI/UX Designer with 2+ experience familiar with Figma, xd, photoshop, illustrator, also, a Frontend Engineer with 4+ experience, and 1+ experience with react, react native, vuejs.",
+  "I have a degree in Software Engineering from the University of Computer Indonesia and I am interested in Software Development, Web Development, Software Architecture and related areas. <br><br> I started in the technology area when I was a teenager, even without knowing that I was manipulating javascript, html and css I used them to make adjustments in an RPG blog. After that I took a technical course where I learned basic computer and programming concepts and realized that this is what I wanted to do.",
   links: {
-    linkedin: "https://www.linkedin.com/in/mahy-mohab-209/",
-    github: "https://github.com/mahy209",
+    linkedin: "https://www.linkedin.com/in/arif-hidayat-8b173212b/",
+    github: "https://github.com/arifhidayat65",
     behance: "https://www.behance.net/mahymohab",
     resume: "https://drive.google.com/file/d/1W0pzOo1Gb-W70BYKehOfZ4qaJt7m1_7O/view?usp=sharing",
   },
   education: [
     {
-      name: "KFS University",
-      place: "Kafr Elsheikh",
-      date: "sep, 2018 - present",
-      degree: "bachelor in software engineering",
-      gpa: "3.1/4.0",
+      name: "University Computer Indonesia",
+      place: "Indonesia",
+      date: "April, 2017 - present",
+      degree: "Bachelor in software engineering",
       description:
         "",
       skills: [
@@ -30,6 +30,12 @@ let info = {
         "web programming",
         "UI/UX design",
         "Front-end developing",
+        "Computer Network",
+        "Agile",
+        "OS",
+        "Data Structure",
+        "Quality",
+        "Database"
       ]
     },
   ],
@@ -48,9 +54,9 @@ let info = {
       place: "Egypt",
       date: "Jun 2021 - Jan 2022",
       position: "React Web Developer",
-      description:
-        "",
-      skills: ["Javascript", "Typescript", "ReactJS", "React-Redux", "webpack", "NLP"]
+      description:"First I worked as a backend developer, then I became a fullstack developer solving front-end and back-end issues."
+        ,
+      skills: ["Javascript", "Typescript", "ReactJS", "React-Redux", "webpack", "Flutter", "Java", "Security"]
     },
     {
       name: "Freelancer",
