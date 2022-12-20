@@ -6,7 +6,7 @@ let info = {
   config: {
     use_cookies: true,
     navbar: {
-      blur: false
+      blur: true
     }
   },
   description:
@@ -14,8 +14,7 @@ let info = {
   links: {
     linkedin: "https://www.linkedin.com/in/arif-hidayat-8b173212b/",
     github: "https://github.com/arifhidayat65",
-    behance: "https://www.behance.net/mahymohab",
-    resume: "https://drive.google.com/file/d/1W0pzOo1Gb-W70BYKehOfZ4qaJt7m1_7O/view?usp=sharing",
+    twitter: "https://twitter.com/Arifhidayat65",
   },
   education: [
     {
