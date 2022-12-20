@@ -1,6 +1,6 @@
 let info = {
   name: "Arif Hidayat",
-  status: "Software Engineer"
+  status: "Software Engineer",
   logo_name: "Arif",
   flat_picture: require("./src/assets/me.png"),
   config: {
@@ -56,7 +56,7 @@ let info = {
       position: "React Web Developer",
       description:"First I worked as a backend developer, then I became a fullstack developer solving front-end and back-end issues."
         ,
-      skills: ["Javascript", "Typescript", "ReactJS", "React-Redux", "webpack", "Flutter", "Java", "Security"]
+      skills: ["Javascript", "Typescript", "ReactJS", "React-Redux", "webpack", "Flutter", "Java"]
     },
     {
       name: "Freelancer",
