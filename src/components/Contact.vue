@@ -155,7 +155,7 @@ export default {
           user_email: this.email,
           from_name: this.name,
           message_html: this.text,
-          to_name: "Mahy Mohab",
+          to_name: "Arif Hidayat",
         };
 
         emailjs
@@ -163,7 +163,7 @@ export default {
             config.emailjs.serviceID,
             config.emailjs.templateID,
             obj,
-            config.emailjs.userID
+            config.emailjs.publicKey
           )
           .then(
             (result) => {
