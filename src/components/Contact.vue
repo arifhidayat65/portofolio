@@ -151,7 +151,7 @@ export default {
         this.snackbarMessage = "Please all the fields";
         this.snackbarColor = "#64808E";
       } else {
-        var obj = {
+        var templateParams = {
           user_email: this.email,
           from_name: this.name,
           message_html: this.text,
@@ -162,8 +162,8 @@ export default {
           .send(
             config.emailjs.serviceID,
             config.emailjs.templateID,
-            obj,
-            // config.emailjs.publicKey
+            templateParams,
+            config.emailjs.publicKey
           )
           .then(
             (result) => {
