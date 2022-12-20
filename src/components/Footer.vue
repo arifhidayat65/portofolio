@@ -14,27 +14,25 @@
             <button
               class="btn btn-outline-secondary mx-2 "
               @click="open('linkedin')"
+              v-tooltip.bottom="'LinkedIn'"
             >
               <i class="fab fa-linkedin"></i>
             </button>
             <button
               class="btn btn-outline-secondary mx-2"
               @click="open('github')"
+              v-tooltip.bottom="'GitHub'"
             >
               <i class="fab fa-github"></i>
             </button>
             <button
               class="btn btn-outline-secondary mx-2"
-              @click="open('behance')"
+              @click="open('facebook')"
+              v-tooltip.bottom="'Facebook'"
             >
-              <i class="fab fa-behance"></i>
+              <i class="fab fa-facebook"></i>
             </button>
-            <button
-              class="btn btn-outline-secondary mx-2"
-              @click="open('resume')"
-            >
-              <i class="fa fa-file"></i>
-            </button>
+         
           </div>
         </div>
       </div>
