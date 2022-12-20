@@ -75,11 +75,11 @@ let info = {
     },
   ],
   skills: [
-    {
-      title: "UX/UI Design",
-      info: ["Figma", "Illustrator", "XD", "Photoshop", "Gimp"],
-      icon: "fa fa-pencil-square-o"
-    },
+    // {
+    //   title: "UX/UI Design",
+    //   info: ["Figma", "Illustrator", "XD", "Photoshop", "Gimp"],
+    //   icon: "fa fa-pencil-square-o"
+    // },
     {
       title: "Language",
       info: [
