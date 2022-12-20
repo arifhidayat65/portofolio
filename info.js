@@ -2,7 +2,7 @@ let info = {
   name: "Arif Hidayat",
   status: "Software Engineer",
   logo_name: "Arif",
-  flat_picture: require("./src/assets/me.png"),
+  flat_picture: require("./src/assets/arif.png"),
   config: {
     use_cookies: true,
     navbar: {
