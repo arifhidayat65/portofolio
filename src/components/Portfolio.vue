@@ -25,7 +25,7 @@
         :class="{ pgray: !nightMode, 'bg-secondary': nightMode }"
       />
 
-      <vue-tabs :activeTextColor="!nightMode ? '#535A5E' : '#dfdfdf'">
+      <!-- <vue-tabs :activeTextColor="!nightMode ? '#535A5E' : '#dfdfdf'">
       <v-tab title="design">
           <div class="row">
             <div
@@ -106,7 +106,7 @@
             <button class="btn" @click.prevent="showMore">{{ showBtn }}</button>
           </div>
         </v-tab>
-      </vue-tabs>
+      </vue-tabs> -->
     </div>
     <transition name="modal">
       <Modal
