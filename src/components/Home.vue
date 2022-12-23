@@ -72,6 +72,9 @@ export default {
     nightMode: {
       type: Boolean,
     },
+    background: {
+      type: String,
+    }
   },
   data() {
     return {
@@ -96,7 +99,7 @@ export default {
         case "twitter":
           window.open(this.twitter, "_blank");
           break;
-        case "resume":
+        case "facebook":
           window.open(this.facebook, "_blank");
           break;
       }
@@ -112,16 +115,17 @@ export default {
 }
 
 img {
-  max-width: 800px;
-  max-height: 500px;
-  margin-top: 80px;
-  transform: rotateY(180deg);
+  margin-top: 0px;
+  max-width: 300px;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  border: 3px solid grey;
 }
 
 @media only screen and (max-width: 580px) {
   img {
     object-fit: cover;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     height: 200px;
     width: 200px;
     margin-top: 10px;
@@ -135,19 +139,19 @@ img {
 }
 
 .btn {
-  border-color: #759CC9;
-  color: #759CC9;
+  border-color: #669db3ff;
+  color: #669db3ff;
 }
 
 .btn:hover {
-  background-color: #759CC9;
-  border-color: #759CC9;
+  background-color: #669db3ff;
+  border-color: #669db3ff;
   color: white;
 }
 
 .btn:focus {
-  background-color: #759CC9;
-  border-color: #759CC9;
+  background-color: #669db3ff;
+  border-color: #669db3ff;
   color: white;
 }
 
