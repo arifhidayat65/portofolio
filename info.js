@@ -15,6 +15,7 @@ let info = {
     linkedin: "https://www.linkedin.com/in/arif-hidayat-8b173212b/",
     github: "https://github.com/arifhidayat65",
     twitter: "https://twitter.com/Arifhidayat65",
+    facebook: "https://www.facebook.com/arifefhidayat/"
   },
   education: [
     {
@@ -40,38 +41,38 @@ let info = {
   ],
   experience: [
     {
-      name: "ITI",
-      place: "Kafr elSheikh, Egypt",
-      date: "1,sep, 2021 - 28,sep, 2021",
-      position: "VueJS web developer",
+      name: "Walden Global Service",
+      place: "Bandung, Indonesia",
+      date: "1,Jan, 2017 - 29,December, 2018",
+      position: "Laravel Php",
       description:
-        "",
+        "Creat Apps with microservice laravel php and manage server",
       skills: ["HTML5", "CSS3", "Bootstrap", "JQuery", "Json", "JavaSript", "TypeSript", "es6", "VueJS"]
     },
     {
-      name: "Udacity",
-      place: "Egypt",
-      date: "Jun 2021 - Jan 2022",
+      name: "Indocyber Global Service",
+      place: "Jakarta, Indonesia",
+      date: "Jan 2018 - Des 2019",
       position: "React Web Developer",
       description:"First I worked as a backend developer, then I became a fullstack developer solving front-end and back-end issues."
         ,
       skills: ["Javascript", "Typescript", "ReactJS", "React-Redux", "webpack", "Flutter", "Java"]
     },
     {
-      name: "Freelancer",
-      place: "Egypt",
-      date: "jun, 2021 - sep, 2021",
-      position: "Junior UI/UX Designer",
-      description: "creating apps and web UI, Creating Interactive prototypes, Low fidelity and UX researches",
+      name: "PT Enigmacamp Cipta Humanika",
+      place: "Jakarta Indonesia",
+      date: "jun, 2019 - sep, 2021",
+      position: "Backend Engineer and Front Engineer",
+      description: "creating apps and web UI, portal backoffice",
       skills: ["figma", "Adobe XD", "Photoshop", "Illustrator"]
     },
     {
-      name: "Technopolitan",
-      place: "Cairo, Egypt",
-      date: "Jan 2022 - Present",
-      position: "Mid-Level UI/UX Designer",
-      description: "part of team include project managers and developers to create technically feasible design, creating 95% of CRM of the company ,creating user experience and interface using adobe XD for best user solution ,finishing 80% of tasks before the target ",
-      skills: ["figma", "Adobe XD"]
+      name: "PT Bank Sinarmas MSIGLIFE",
+      place: "Jakarta, Indonesia",
+      date: "Jan 2021 - Des 2022",
+      position: "Backend Developer",
+      description: "part of team include project managers and developers to create technically Service ResApi, management server, and Quality Code",
+      skills: ["Java", "Springboot","Oracle,","Agile Framework","Zul Server","Security","Microservices","CI/CD", "Tomcat"]
     },
   ],
   skills: [
@@ -114,7 +115,7 @@ let info = {
     },
     {
       title: "Tools",
-      info: ["AWS", "Docker", "docker-compose", "Kubernets"],
+      info: ["AWS", "Docker", "docker-compose", "Kubernets","Apache","Oracle"],
       icon: "fas fa-tools"
     },
     {
@@ -318,78 +319,101 @@ let info = {
   ],
   portfolio: [
     {
-      name: "Diary App",
+      name: "Missao Nascente",
       pictures: [
         {
-          img: require("./src/assets/portfolio/diary/1.png")
-        },
-        {
-          img: require("./src/assets/portfolio/diary/2.png")
-        },
-        {
-          img: require("./src/assets/portfolio/diary/3.png")
+          img: require("./src/assets/portfolio/missao_nascente.png")
         },
       ],
-      technologies: ["react", "scss", "local storage"],
-      category: "Web App",
-      date: "Aug, 2021 - 20 days",
-      github:
-        "https://github.com/mahy209/notes-react-app.git",
-      visit: "https://github.com/mahy209/notes-react-app.git",
+      technologies: ["Java", "Android", "SQlite"],
+      category: "Mobile",
+      date: "2016",
+      visit: "https://github.com/fga-gpp-mds/2016.2-MissaoNascente",
       description:
-        " Diary react app with some new features: Dark mode, upload images, tags, filter search with title/content/tag "
+        "Mobile application to make the visits to the Trail named “Trilha da Nascente do Córrego Cabeça de Veado”, located in the Botanic Garden of Brasilia, more fun and complete. This project was done in a college course using the rup process for half of the project and the agile process for the other half."
     },
     {
-      name: "Online Examination",
+      name: "Receituario Medico",
       pictures: [
         {
-          img: require("./src/assets/portfolio/online examination/exam (1).png")
+          img: require("./src/assets/portfolio/receituario.png")
         },
-        {
-          img: require("./src/assets/portfolio/online examination/exam (2).png")
-        },
-        {
-          img: require("./src/assets/portfolio/online examination/exam (3).png")
-        },
-        {
-          img: require("./src/assets/portfolio/online examination/exam (4).png")
-        },
-        {
-          img: require("./src/assets/portfolio/online examination/exam (5).png")
-        }
       ],
-      technologies: ["HTML", "CSS","JavaSript","JQuery", "PHP", "MySQL"],
+      technologies: ["Python", "Django", "JQuery", "Postgres", "Docker", "CI/CD"],
       category: "Web App",
-      date: "Apr, 2021 - May, 2021",
-      github: "https://github.com/mahy209/online-examination.git",
-      visit: "https://github.com/mahy209/online-examination.git",
+      date: "2017",
+      visit: "https://github.com/fga-eps-mds/2017.2-Receita-Mais",
       description:
-        "Online Examination System Today Online Examination System has become a fast growing examination method because of its speed and accuracy. It is also needed less manpower to execute the examination. Almost all organizations now-a-days, are conducting their objective exams by online examination system, it saves students time in examinations. Organizations can also easily check the performance of the student that they give in an examination. As a result of this, organizations are releasing results in less time. It also helps the environment by saving paper. According to today’s requirement, online examination project in php is very useful to learn it. What is an online examination system? In an online examination system examine get their user id and password with his/her admit card. This id is already saved in the examination server. When examine login to the server he/she get his/her profile already register. On the certain time examine gets the message to start the examination. All answers given by examine are saved into the server with his/her profile information. Online examination system also allows to correct the answer if the examine needed to change any answer in the examination time duration, however, after the time duration any change will not allow. This also makes c checking the answer easy and error proof as computers are more accurate than man and provide fast results too. Php is a web base language so we can create an online examination system in PHP. Administrator of Online Examination has multiple features such as Add, Delete, Update Topics and Question. To Login as Admin put inside your browser."
+        "Project that aims to help doctors prescribe prescriptions and monitor patients. This project was done in a college course using the rup process for half of the project and the agile process for the other half."
     },
     {
-      name: "MyFlix.com",
+      name: "Coda+",
       pictures: [
         {
-          img: require("./src/assets/portfolio/myflix.com/1.png")
-        },
-        {
-          img: require("./src/assets/portfolio/myflix.com/2.png")
-        },
-        {
-          img: require("./src/assets/portfolio/myflix.com/3.png")
-        },
-        {
-          img: require("./src/assets/portfolio/myflix.com/4.png")
+          img: require("./src/assets/portfolio/codamais.png")
         },
       ],
-      technologies: ["react", "css", "TMDB"],
+      technologies: ["Python", "Django", "Postgres", "CI/CD"],
       category: "Web App",
-      date: "Aug, 2021 - 10 days",
-      github:
-        "https://github.com/mahy209/MyFlix-react-app.git",
-      visit: "https://github.com/mahy209/MyFlix-react-app.git",
+      date: "2017",
+      visit: "https://github.com/CodaMais/CodaMais",
       description:
-        " flix.com is a netflix clone using React JS and TMDB with courusal and search engine. "
+        "Project that aims to help beginner programmers with logic and algorithms on a web platform. This project was done in a college course using the agile process."
+    },
+    {
+      name: "Conspiracy",
+      pictures: [
+        {
+          img: require("./src/assets/portfolio/conspiracy.png")
+        },
+      ],
+      technologies: ["C++", "SDL", "cmake"],
+      category: "Game",
+      date: "2017",
+      visit: "https://github.com/IJE-Valhalla/Conspiracy",
+      description:
+        "Game based on conspiracy theory. It was a project carried out during a game class at the University of Brasilia. It involved a multidisciplinary team of computing, design and music."
+    },
+    {
+      name: "GibbLauncher",
+      pictures: [
+        {
+          img: "https://avatars.githubusercontent.com/u/43285690?s=400&u=84b52ac26d78283a04b738aca1d02be6ef548f52&v=4"
+        },
+      ],
+      technologies: ["Python", "Flask", "Kotlin", "Android"],
+      category: "Embedded & Mobile",
+      date: "2018",
+      visit: "https://github.com/Gibb-Launcher",
+      description:
+        "Mobile and embedded system with the objective of controlling a launcher and mapping and traking of projectiles. It was a multidisciplinary project where students from energy engineering, electronics engineering, aerospace engineering, automotive engineering and software engineering worked together."
+    },
+    {
+      name: "Ferramenta de Precificação",
+      pictures: [
+        {
+          img: require("./src/assets/portfolio/gov_br.svg")
+        },
+      ],
+      technologies: ["Java", "Javascript","Python", "Spring", "Angular", "Django", ],
+      category: "Web App",
+      date: "2018",
+      visit: "",
+      description: "Mobile and embedded system with the objective of controlling a launcher and mapping and tracking of projectiles. It was a multidisciplinary project where students from energy engineering, electronics engineering, aerospace engineering, automotive engineering and software engineering worked together."
+    },
+    {
+      name: "The Pilgrim App",
+      pictures: [
+        {
+          img: require("./src/assets/portfolio/pilgrim.png")
+        },
+      ],
+      technologies: ["Python", "Django", "Postgres", "Cassandra", "AWS", "CI/CD", "Firebase"],
+      category: "Back-End",
+      date: "2019",
+      visit: "https://thepilgrim.app/",
+      description:
+        "Christian content system like ebooks, audiobooks, courses and articles. With the application for consumption of products and an e-commerce for purchases."
     },
   ],
 };
