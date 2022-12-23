@@ -49,7 +49,7 @@
               @click="open('facebook')"
               v-tooltip.bottom="'Facebook'"
             >
-              <i class="fa fa-facebook"></i>
+              <i class="fab fa-facebook"></i>
             </button>
           </div>
         </div>
