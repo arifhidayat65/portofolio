@@ -6,7 +6,7 @@
       <About id="about" :nightMode="nightMode" />
       <Skills id="skills" :nightMode="nightMode" />
       <Portfolio id="portfolio" :nightMode="nightMode" />
-      <Contact id="contact" :nightMode="nightMode" />
+      <!-- <Contact id="contact" :nightMode="nightMode" /> -->
       <Footer :nightMode="nightMode" />
     </div>
   </div>
@@ -101,7 +101,7 @@ export default {
 }
 
 .pblue {
-  color: #759CC9;
+  color: #669db3ff;
 }
 
 .bg-dark2 {
@@ -131,7 +131,7 @@ export default {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #AEAEAE;
+  background: #888;
   border-radius: 9px;
 }
 
