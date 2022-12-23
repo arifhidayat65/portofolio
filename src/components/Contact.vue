@@ -17,7 +17,7 @@
         <span
           class="title text-center"
           :class="{ pgray: !nightMode, 'text-light': nightMode }"
-          >Contact.</span
+          >contact.</span
         >
       </div>
       <hr
@@ -113,7 +113,7 @@
 
 <script>
 import config from "../../config";
-import emailjs from "@emailjs/browser";
+import emailjs from "emailjs-com";
 
 import Snackbar from "./helpers/Snackbar";
 
@@ -149,13 +149,13 @@ export default {
       if (!this.email || !this.name || !this.text) {
         this.showSnackbar = true;
         this.snackbarMessage = "Please all the fields";
-        this.snackbarColor = "#64808E";
+        this.snackbarColor = "rgb(212, 149, 97)";
       } else {
         var obj = {
           user_email: this.email,
           from_name: this.name,
           message_html: this.text,
-          to_name: "Arif Hidayat",
+          to_name: "Ronyell Henrique",
         };
 
         emailjs
@@ -163,7 +163,7 @@ export default {
             config.emailjs.serviceID,
             config.emailjs.templateID,
             obj,
-            config.emailjs.publicKey
+            config.emailjs.userID
           )
           .then(
             (result) => {
@@ -178,7 +178,7 @@ export default {
             (error) => {
               this.showSnackbar = true;
               this.snackbarMessage = "Oops! Something went wrong.";
-              this.snackbarColor = "#64808E";
+              this.snackbarColor = "rgb(212, 149, 97)";
             }
           );
       }
@@ -215,24 +215,23 @@ export default {
   padding: 10px;
   width: 50%;
   transition: all 1s;
-  background-color: #b3b3cc;
 }
 
 .btn {
-  border-color: #759CC9;
-  color: #759CC9;
+  border-color: #669db3ff;
+  color: #669db3ff;
   width: 50%;
 }
 
 .btn:hover {
-  background-color: #759CC9;
-  border-color: #759CC9;
+  background-color: #669db3ff;
+  border-color: #669db3ff;
   color: white;
 }
 
 .btn:focus {
-  background-color: #759CC9;
-  border-color: #759CC9;
+  background-color: #669db3ff;
+  border-color: #669db3ff;
   color: white;
 }
 

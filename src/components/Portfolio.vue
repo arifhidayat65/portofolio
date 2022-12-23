@@ -24,61 +24,7 @@
         width="50%"
         :class="{ pgray: !nightMode, 'bg-secondary': nightMode }"
       />
-
       <vue-tabs :activeTextColor="!nightMode ? '#535A5E' : '#dfdfdf'">
-      <v-tab title="design">
-          <div class="row">
-            <div
-              v-for="(design, idx) in desgin_info"
-              :key="idx"
-              :class="{ 'mt-4': idx === 0 ? true : true }"
-              class="col-xl-6 col-bg-6 col-md-12 col-sm-12"
-              style="position: relative;"
-            >
-              <vueper-slides
-                :dragging-distance="50"
-                fixed-height="300px"
-                :bullets="false"
-                slide-content-outside="bottom"
-                style="position: aboslute"
-                  @click.prevent="showDesignModalFn(design)"
-
-              >
-                <vueper-slide
-                  v-for="(slide, i) in design.pictures"
-                  :key="i"
-                  :image="slide.img"
-                />
-              </vueper-slides>
-              <div
-                style="width: 100%; display: flex; justify-content: space-between"
-                class="mt-2"
-              >
-                <div>
-                  <div class="title2" style="font-weight: 500;">{{ design.title }}</div>
-                  <span
-                    class="badge mr-2 mb-2"
-                    v-for="tech in design.technologies"
-                    :key="tech"
-                    :class="{ 'bg-dark4': nightMode }"
-                    >{{ tech }}</span
-                  >
-                  •
-                  <span class="date ml-1">{{design.date}}</span>
-                </div>
-
-                <button
-                  style="height: 31px; margin-top: 5px;"
-                  class="btn-sm btn btn-outline-secondary no-outline"
-                  @click.prevent="showDesignModalFn(design)"
-                >
-                  read more
-                </button>
-              </div>
-            </div>
-          </div>
-          <br />
-        </v-tab>
         <v-tab title="development">
           <br />
           <div class="row">
@@ -90,7 +36,6 @@
               <Card
                 :style="{ 'transition-delay': (idx % 3) / 4.2 + 's' }"
                 :portfolio="portfolio"
-                @show="showModalFn"
                 data-aos="fade-up"
                 :nightMode="nightMode"
                 data-aos-offset="100"
@@ -274,19 +219,19 @@ export default {
 }
 
 .btn {
-  border-color: #8585ad;
-  color: #8585ad;
+  border-color: rgb(212, 149, 97);
+  color: rgb(212, 149, 97);
 }
 
 .btn:hover {
-  background-color: #8585ad;
-  border-color: #8585ad;
+  background-color: rgb(212, 149, 97);
+  border-color: rgb(212, 149, 97);
   color: white;
 }
 
 .btn:focus {
-  background-color: #8585ad;
-  border-color: #8585ad;
+  background-color: rgb(212, 149, 97);
+  border-color: rgb(212, 149, 97);
   color: white;
 }
 
@@ -381,19 +326,19 @@ export default {
 }
 
 .btn {
-  border-color: #759CC9;
-  color: #759CC9;
+  border-color: #669db3ff;
+  color: #669db3ff;
 }
 
 .btn:hover {
-  background-color: #759CC9;
-  border-color: #759CC9;
+  background-color: #669db3ff;
+  border-color: #669db3ff;
   color: white;
 }
 
 .btn:focus {
-  background-color: #759CC9;
-  border-color: #759CC9;
+  background-color: #669db3ff;
+  border-color: #669db3ff;
   color: white;
 }
 /deep/ .vueperslides__arrow {
@@ -403,7 +348,7 @@ export default {
 }
 
 .badge {
-  background-color: #bbd4dd;
+  background-color: rgb(211, 227, 233);
   transition: all 0.5s;
   font-weight: 500;
   font-size: 13px;

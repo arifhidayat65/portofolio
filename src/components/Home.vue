@@ -39,17 +39,17 @@
             </button>
             <button
               class="btn btn-outline-secondary mx-2"
-              @click="open('behance')"
-              v-tooltip.bottom="'behance'"
+              @click="open('twitter')"
+              v-tooltip.bottom="'Twitter'"
             >
-              <i class="fab fa-behance"></i>
+              <i class="fab fa-twitter"></i>
             </button>
             <button
               class="btn btn-outline-secondary mx-2"
-              @click="open('resume')"
-              v-tooltip.bottom="'Resume'"
+              @click="open('facebook')"
+              v-tooltip.bottom="'Facebook'"
             >
-              <i class="fa fa-file"></i>
+              <i class="fa fa-facebook"></i>
             </button>
           </div>
         </div>
@@ -80,8 +80,8 @@ export default {
       name: info.name,
       linkedin: info.links.linkedin,
       github: info.links.github,
-      behance: info.links.behance,
-      resume: info.links.resume
+      twitter: info.links.twitter,
+      facebook: info.links.facebook
     };
   },
   methods: {
@@ -93,11 +93,11 @@ export default {
         case "github":
           window.open(this.github, "_blank");
           break;
-        case "behance":
-          window.open(this.behance, "_blank");
+        case "twitter":
+          window.open(this.twitter, "_blank");
           break;
         case "resume":
-          window.open(this.resume, "_blank");
+          window.open(this.facebook, "_blank");
           break;
       }
     },

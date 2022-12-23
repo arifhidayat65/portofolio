@@ -29,18 +29,14 @@
           </div>
           <p
             class="title3 m-0 pb-2 pheight pt-1"
-            v-html="
-              portfolio.description.length > 100
-                ? portfolio.description.substring(0, 105) + '...'
-                : portfolio.description
-            "
+            v-html="portfolio.description"
           >
           </p>
         </div>
         <div class="text-center mt-2">
           <button
             href=""
-            class="btn-sm btn btn-outline-secondary no-outline"
+            class="btn-sm btn btn-outline-secondary no-outline ml-4"
             @click.prevent="showModal"
           >
             read more
@@ -184,19 +180,19 @@ div.img-div {
 }
 
 .btn {
-  border-color: #759CC9;
-  color: #759CC9;
+  border-color: #669db3ff;
+  color: #669db3ff;
 }
 
 .btn:hover {
-  background-color: #759CC9;
-  border-color: #759CC9;
+  background-color: #669db3ff;
+  border-color: #669db3ff;
   color: white;
 }
 
 .btn:focus {
-  background-color: #759CC9;
-  border-color: #759CC9;
+  background-color: #669db3ff;
+  border-color: #669db3ff;
   color: white;
 }
 

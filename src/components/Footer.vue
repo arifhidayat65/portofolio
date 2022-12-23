@@ -30,6 +30,13 @@
               @click="open('facebook')"
               v-tooltip.bottom="'Facebook'"
             >
+              <i class="fab fa-twitter"></i>
+            </button>
+            <button
+              class="btn btn-outline-secondary mx-2"
+              @click="open('twitter')"
+              v-tooltip.bottom="'Twitter'"
+            >
               <i class="fab fa-facebook"></i>
             </button>
          
