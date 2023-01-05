@@ -11,7 +11,7 @@
     >
       <div class="row align-items-center">
         <div class="col-xl-6 col-bg-6 col-md-6 col-sm-12 text-center">
-          <img :src="picture" />
+          <img :src="picture" class="rounded" />
         </div>
         <div class="col-xl-6 col-bg-6 col-md-6 col-sm-12 pt-5">
           <span
@@ -110,7 +110,7 @@ export default {
 
 <style scoped>
 .home-title {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 500;
 }
 
@@ -130,7 +130,7 @@ img {
     width: 200px;
     margin-top: 10px;
     margin-bottom: 10px;
-    border: 2px solid rgb(205, 205, 205);
+    border: 2px solid rgb(102, 157, 179);
   }
 }
 

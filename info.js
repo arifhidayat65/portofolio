@@ -1,7 +1,7 @@
 let info = {
   name: "Arif Hidayat",
   status: "Software Engineer",
-  logo_name: "Arif",
+  logo_name: "Arif Hidayat",
   flat_picture: require("./src/assets/arif.png"),
   config: {
     use_cookies: true,
