@@ -6,7 +6,7 @@
           class="col-xl-6 col-bg-6 col-md-6 col-sm-12 pbelow"
           style="color: white;"
         >
-          <span>© 2022 Copyright: Arif Hidayat</span>
+          <span>© 2023 Copyright: Arif Hidayat</span>
         </div>
 
         <div class="col-xl-6 col-bg-6 col-md-6 col-sm-12">
@@ -56,8 +56,8 @@ export default {
     return {
       linkedin: info.links.linkedin,
       github: info.links.github,
-      angellist: info.links.angellist,
-      resume: info.links.resume,
+      facebook: info.links.facebook,
+      twitter: info.links.twitter,
     };
   },
   methods: {
