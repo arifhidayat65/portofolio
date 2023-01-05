@@ -34,13 +34,13 @@
           </p>
         </div>
         <div class="text-center mt-2">
-          <button
+          <!-- <button
             href=""
             class="btn-sm btn btn-outline-secondary no-outline ml-4"
             @click.prevent="showModal"
           >
             read more
-          </button>
+          </button> -->
           <button
             href="#"
             class="btn-sm btn btn-outline-secondary no-outline ml-4"
@@ -173,7 +173,7 @@ div.img-div {
 }
 
 .badge {
-  background-color: #bbd4dd;
+background-color: rgb(211, 227, 233);
   transition: all 0.5s;
   font-weight: 500;
   font-size: 13px;
@@ -202,5 +202,9 @@ div.img-div {
 
 .bg-dark4 {
   background-color: #494e55 !important;
+}
+
+.ml-4 {
+  margin-left: 0rem!important;
 }
 </style>
