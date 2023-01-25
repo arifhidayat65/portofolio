@@ -21,7 +21,7 @@ let info = {
     {
       name: "University Computer Indonesia",
       place: "Indonesia",
-      date: "April, 2017 - present",
+      date: "April, 2017 - Graduated",
       degree: "Bachelor in software engineering",
       description:
         "",
