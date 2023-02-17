@@ -93,12 +93,12 @@ let info = {
     {
       title: "Front-end",
       info: [
-        "HTML5","CSS3","Bootstrap3","Es6"],
+        "HTML5","CSS3","Bootstrap3","Es6", "React", "Redux"],
       icon: "fa fa-cubes"
     },
     {
       title: "web technologies",
-      info: ["Django", "Flask", "Spring", "Node", "Vue", "React", "HTML", "CSS"],
+      info: ["Django", "Flask", "Spring", "NodeJS", "Vue", "React", "HTML", "CSS", "Tailwind"],
       icon: "fas fa-laptop-code"
     },
     {
