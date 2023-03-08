@@ -322,15 +322,15 @@ let info = {
       name: "Missao Nascente",
       pictures: [
         {
-          img: require("./src/assets/portfolio/missao_nascente.png")
+          img: require("./src/assets/portfolio/enigmacamp.png")
         },
       ],
-      technologies: ["Java", "Android", "SQlite"],
-      category: "Mobile",
-      date: "2016",
-      visit: "https://github.com/fga-gpp-mds/2016.2-MissaoNascente",
-      description:
-        "Mobile application to make the visits to the Trail named “Trilha da Nascente do Córrego Cabeça de Veado”, located in the Botanic Garden of Brasilia, more fun and complete. This project was done in a college course using the rup process for half of the project and the agile process for the other half."
+      technologies: ["Java", "Android", "SQlite", "Vue"],
+      category: "Website",
+      date: "2019",
+      visit: "https://enigmacamp.com/",
+      description:  
+        "Enigma Camp 2.0 is a full online learning program completed with a more advanced combination of Self-paced learning, Instructor Led, and Collaborative learning methods."
     },
     {
       name: "Receituario Medico",
