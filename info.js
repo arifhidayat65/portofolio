@@ -97,7 +97,7 @@ let info = {
       icon: "fa fa-cubes"
     },
     {
-      title: "web technologies",
+      title: "Web Technologies",
       info: ["Django", "Flask", "Spring", "NodeJS", "Vue", "React", "HTML", "CSS", "Tailwind"],
       icon: "fas fa-laptop-code"
     },
