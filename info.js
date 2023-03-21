@@ -342,21 +342,21 @@ let info = {
       technologies: ["Python", "Django", "JQuery", "Postgres", "Docker", "CI/CD"],
       category: "Web App",
       date: "2017",
-      visit: "https://github.com/fga-eps-mds/2017.2-Receita-Mais",
+      visit: "",
       description:
         "Project that aims to help doctors prescribe prescriptions and monitor patients. This project was done in a college course using the rup process for half of the project and the agile process for the other half."
     },
     {
-      name: "Coda+",
+      name: "Backoffice Enigmacamp",
       pictures: [
         {
-          img: require("./src/assets/portfolio/codamais.png")
+          img: require("./src/assets/portfolio/backoffice.png")
         },
       ],
-      technologies: ["Python", "Django", "Postgres", "CI/CD"],
+      technologies: ["Angular", "Mysql", "Postgres", "CI/CD"],
       category: "Web App",
       date: "2017",
-      visit: "https://github.com/CodaMais/CodaMais",
+      visit: "",
       description:
         "Project that aims to help beginner programmers with logic and algorithms on a web platform. This project was done in a college course using the agile process."
     },
@@ -370,7 +370,7 @@ let info = {
       technologies: ["C++", "SDL", "cmake"],
       category: "Game",
       date: "2017",
-      visit: "https://github.com/IJE-Valhalla/Conspiracy",
+      visit: "",
       description:
         "Game based on conspiracy theory. It was a project carried out during a game class at the University of Brasilia. It involved a multidisciplinary team of computing, design and music."
     },
