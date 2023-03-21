@@ -58,8 +58,8 @@
                 href="/portfolio"
                 @click.prevent="$emit('scroll', 'portfolio')"
                 :class="{ 'text-light': nightMode }"
-                >Portfolio</a
-              >
+                v-tooltip.bottom="nightMode ? 'Portofolio' : 'Portofolio"
+                >Portfolio</a>
             </li>
             <!-- <li class="nav-item mx-2">
               <a
