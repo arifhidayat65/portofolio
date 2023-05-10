@@ -1,4 +1,6 @@
+
 <template>
+  
   <div id="app" :class="{ 'text-dark': !nightMode, 'text-light': nightMode }">
     <Navbar @scroll="scrollTo" @nightMode="switchMode" :nightMode="nightMode" />
     <div class="parent">
@@ -74,7 +76,15 @@ export default {
   },
 };
 </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S67G8EPDBK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-S67G8EPDBK');
+</script>
 <style>
 #app {
   font-family: "Montserrat", sans-serif;
