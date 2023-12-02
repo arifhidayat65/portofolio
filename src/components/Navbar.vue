@@ -31,8 +31,10 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item mx-2">
+          <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">About</button>
+            
               <a
                 class="nav-link"
                 href="/about"
@@ -56,14 +58,8 @@
                 href="/portfolio"
                 @click.prevent="$emit('scroll', 'portfolio')"
                 :class="{ 'text-light': nightMode }"
-                >Portfolio</a
-              ><i
-              :class="{
-                'fas fa-moon': nightMode,
-                'far fa-moon': !nightMode,
-              }"
-              v-tooltip.bottom="nightMode ? 'Light Mode' : 'Night Mode'"
-            ></i>
+                v-tooltip.bottom="nightMode ? 'Portofolio' : 'Portofolio"
+                >Portfolio</a>
             </li>
             <!-- <li class="nav-item mx-2">
               <a
