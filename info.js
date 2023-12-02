@@ -333,18 +333,18 @@ let info = {
         "Enigma Camp 2.0 is a full online learning program completed with a more advanced combination of Self-paced learning, Instructor Led, and Collaborative learning methods."
     },
     {
-      name: "Receituario Medico",
+      name: "Bank BSI",
       pictures: [
         {
-          img: require("./src/assets/portfolio/receituario.png")
+          img: require("./src/assets/portfolio/bankbsi.png")
         },
       ],
       technologies: ["Python", "Django", "JQuery", "Postgres", "Docker", "CI/CD"],
       category: "Web App",
-      date: "2017",
+      date: "2022",
       visit: "",
       description:
-        "Project that aims to help doctors prescribe prescriptions and monitor patients. This project was done in a college course using the rup process for half of the project and the agile process for the other half."
+        "Bank BSI is the first Islamic bank website in Indonesia and is a pride for Muslims besides that we implement a security system for anyone who enters development so that there is no data leakage in the bank itself"
     },
     {
       name: "Backoffice Enigmacamp",
