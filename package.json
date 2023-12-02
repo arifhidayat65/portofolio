@@ -36,6 +36,6 @@
     "eslint-plugin-vue": "^6.2.2",
     "vue-template-compiler": "^2.6.11"
   },
-  "keywords": ["gitarriff"],
+  "keywords": [],
   "description": "Portofolio Arif Hidayat"
 }
