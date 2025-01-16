@@ -54,23 +54,24 @@
             </li>
             <li class="nav-item mx-2 ">
               <a
-                class="nav-link"
-                href="/portfolio"
-                @click.prevent="$emit('scroll', 'portfolio')"
-                :class="{ 'text-light': nightMode }"
-                v-tooltip.bottom="nightMode ? 'Portofolio' : 'Portofolio"
-                >Portfolio</a>
+             class="nav-link"
+             href="/portfolio"
+             @click.prevent="scrollTo('portfolio')"
+            :class="{ 'text-light': nightMode }"
+            v-tooltip.bottom="nightMode ? 'Portfolio' : 'Portfolio"
+            >Portfolio</a>
+                
             </li>
-            // <!-- <li class="nav-item mx-2">
-            //   <a
-            //     class="nav-link"
-            //     href="/contact"
-            //     @click.prevent="$emit('scroll', 'contact')"
-            //     :class="{ 'text-light': nightMode }"
-            //     >Contact</a
-            //   >
-            // </li> -->
-            // <li class="nav-item ml-2">
+            <!-- <li class="nav-item mx-2">
+              <a
+                class="nav-link"
+                href="/contact"
+                @click.prevent="$emit('scroll', 'contact')"
+                :class="{ 'text-light': nightMode }"
+                >Contact</a
+              >
+            </li> -->
+            <li class="nav-item ml-2">
               <a
                 class="nav-link"
                 href="#"
