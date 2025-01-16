@@ -12,7 +12,7 @@
         <a
           class="navbar-brand"
           href="/"
-          @click.prevent="$emit('scroll', 'home')"
+          @click.prevent="scrollTo('home')"
         >
           <Logo :nightMode="nightMode" />
         </a>
@@ -25,66 +25,52 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span style="color: gray; font-size: 23px;"
-            ><i class="fas fa-bars"></i>
-            </span>
+          <span style="color: gray; font-size: 23px;">
+            <i class="fas fa-bars"></i>
+          </span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+          <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm" id="pillNav2" role="tablist">
             <li class="nav-item" role="presentation">
               <button class="nav-link active rounded-5" id="home-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">About</button>
-            
               <a
                 class="nav-link"
                 href="/about"
-                @click.prevent="$emit('scroll', 'about')"
+                @click.prevent="scrollTo('about')"
                 :class="{ 'text-light': nightMode }"
-                >About</a
-              >
+              >About</a>
             </li>
             <li class="nav-item mx-2">
               <a
                 class="nav-link"
                 href="/skills"
-                @click.prevent="$emit('scroll', 'skills')"
+                @click.prevent="scrollTo('skills')"
                 :class="{ 'text-light': nightMode }"
-                >Skills</a
-              >
+              >Skills</a>
             </li>
-            <li class="nav-item mx-2 ">
-              <a
-             class="nav-link"
-             href="/portfolio"
-             @click.prevent="scrollTo('portfolio')"
-            :class="{ 'text-light': nightMode }"
-            v-tooltip.bottom="nightMode ? 'Portfolio' : 'Portfolio"
-            >Portfolio</a>
-                
-            </li>
-            <!-- <li class="nav-item mx-2">
+            <li class="nav-item mx-2">
               <a
                 class="nav-link"
-                href="/contact"
-                @click.prevent="$emit('scroll', 'contact')"
+                href="/portfolio"
+                @click.prevent="scrollTo('portfolio')"
                 :class="{ 'text-light': nightMode }"
-                >Contact</a
-              >
-            </li> -->
+                v-tooltip.bottom="nightMode ? 'Portfolio' : 'Portfolio'"
+              >Portfolio</a>
+            </li>
             <li class="nav-item ml-2">
               <a
                 class="nav-link"
                 href="#"
                 @click.prevent="switchMode"
                 :class="{ 'text-light': nightMode }"
-                ><i
-                  :class="{
-                    'fas fa-moon': nightMode,
-                    'far fa-moon': !nightMode,
-                  }"
-                  v-tooltip.bottom="nightMode ? 'Light Mode' : 'Night Mode'"
-                ></i
-              ></a>
+              ><i
+                :class="{
+                  'fas fa-moon': nightMode,
+                  'far fa-moon': !nightMode,
+                }"
+                v-tooltip.bottom="nightMode ? 'Light Mode' : 'Night Mode'"
+              ></i></a>
             </li>
           </ul>
         </div>
@@ -92,61 +78,3 @@
     </nav>
   </div>
 </template>
-
-<script>
-import Logo from "./helpers/Logo";
-import info from "../../info";
-
-export default {
-  name: "Navbar",
-  props: {
-    nightMode: {
-      type: Boolean,
-    },
-  },
-  data() {
-    return {
-      navbarConfig: info.config.navbar,
-      localNightMode: this.nightMode,
-    };
-  },
-  components: {
-    Logo,
-  },
-  methods: {
-    switchMode() {
-      this.localNightMode = !this.localNightMode;
-      this.$emit("nightMode", this.localNightMode);
-    },
-  },
-};
-</script>
-
-<style scoped>
-.nav-link {
-  font-weight: 500;
-}
-.nav-link:hover{
-  background-color: rgba(160, 159, 159, 0.336);
-}
-
-button {
-  border: none;
-  outline: none;
-}
-
-button:hover {
-  border: none;
-  outline: none;
-}
-
-/* nav {
-  border-bottom: 1px solid rgba(160, 159, 159, 0.336);
-  position: fixed !important;
-} */
-
-.navbar-blur {
-  background-color: #ffffff7e;
-  backdrop-filter: blur(12px);
-}
-</style>
