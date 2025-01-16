@@ -13,7 +13,6 @@
 </template>
 
 <script>
-
 import Navbar from "./components/Navbar.vue";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -27,7 +26,7 @@ import info from "../info";
 export default {
   name: "App",
   components: {
-    // Navbar,
+    Navbar,
     Home,
     About,
     Skills,
