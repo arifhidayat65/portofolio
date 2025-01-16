@@ -344,7 +344,7 @@ let info = {
       name: "Bank BSI",
       pictures: [
         {
-          img: require("./src/assets/portfolio/bankbsi.jpg")
+          img: require("./src/assets/portfolio/bankbsi.png")
         },
       ],
       technologies: ["Python", "Django", "JQuery", "Postgres", "Docker", "CI/CD"],

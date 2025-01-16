@@ -1,6 +1,4 @@
-
 <template>
-  
   <div id="app" :class="{ 'text-dark': !nightMode, 'text-light': nightMode }">
     <Navbar @scroll="scrollTo" @nightMode="switchMode" :nightMode="nightMode" />
     <div class="parent">
@@ -8,15 +6,19 @@
       <About id="about" :nightMode="nightMode" />
       <Skills id="skills" :nightMode="nightMode" />
       <Portfolio id="portfolio" :nightMode="nightMode" />
-      <!-- <Contact id="contact" :nightMode="nightMode" /> -->
+      <Contact id="contact" :nightMode="nightMode" />
       <Footer :nightMode="nightMode" />
     </div>
   </div>
 </template>
 
 <script>
+<<<<<<< HEAD
 
 import Navbar from "./components/Navbar.vue";
+=======
+// import Navbar from "./components/Navbar.vue";
+>>>>>>> f4db8447f509c72e704ab3659735f3310f72dfbc
 import Home from "./components/Home";
 import About from "./components/About";
 import Skills from "./components/Skills";
@@ -29,7 +31,7 @@ import info from "../info";
 export default {
   name: "App",
   components: {
-    Navbar,
+    // Navbar,
     Home,
     About,
     Skills,
@@ -77,15 +79,7 @@ export default {
   },
 };
 </script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S67G8EPDBK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-S67G8EPDBK');
-</script>
 <style>
 #app {
   font-family: "Montserrat", sans-serif;
@@ -112,7 +106,7 @@ export default {
 }
 
 .pblue {
-  color: #669db3ff;
+  color: #759CC9;
 }
 
 .bg-dark2 {
@@ -142,7 +136,7 @@ export default {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #AEAEAE;
   border-radius: 9px;
 }
 
