@@ -70,7 +70,7 @@
             //     >Contact</a
             //   >
             // </li> -->
-            <li class="nav-item ml-2">
+            // <li class="nav-item ml-2">
               <a
                 class="nav-link"
                 href="#"
