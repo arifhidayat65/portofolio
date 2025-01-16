@@ -13,12 +13,8 @@
 </template>
 
 <script>
-<<<<<<< HEAD
 
 import Navbar from "./components/Navbar.vue";
-=======
-// import Navbar from "./components/Navbar.vue";
->>>>>>> f4db8447f509c72e704ab3659735f3310f72dfbc
 import Home from "./components/Home";
 import About from "./components/About";
 import Skills from "./components/Skills";
