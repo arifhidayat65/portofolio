@@ -139,10 +139,10 @@ button:hover {
   outline: none;
 }
 
-nav {
+/* nav {
   border-bottom: 1px solid rgba(160, 159, 159, 0.336);
   position: fixed !important;
-}
+} */
 
 .navbar-blur {
   background-color: #ffffff7e;
