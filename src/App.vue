@@ -21,7 +21,7 @@ import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-import info from "../info";s
+import info from "../info";
 
 export default {
   name: "App",
