@@ -6,4 +6,7 @@ let config = {
   }
 };
 
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8616854468199151"
+     crossorigin="anonymous"></script>
 export default config;
