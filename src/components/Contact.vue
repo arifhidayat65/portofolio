@@ -1,121 +1,40 @@
 <template>
-  <div
-    class="py-4 p-st"
-    :class="{
-      'bg-light': !nightMode,
-      'bg-dark2': nightMode,
-      'text-light': nightMode,
-    }"
-  >
+  <div class="py-5" :class="{ 'bg-light': !nightMode, 'bg-dark': nightMode }">
     <div class="container">
-      <div
-        class="text-center"
-        data-aos="fade"
-        data-aos-once="true"
-        data-aos-duration="1000"
-      >
-        <span
-          class="title text-center"
-          :class="{ pgray: !nightMode, 'text-light': nightMode }"
-          >contact.</span
-        >
+      <div class="text-center mb-5" data-aos="fade-down" data-aos-duration="1000">
+        <h2 class="display-5 fw-bold">Contact</h2>
+        <div class="title-divider"></div>
       </div>
-      <hr
-        width="50%"
-        :class="{ pgray: !nightMode, 'bg-secondary': nightMode }"
-      />
-      <br />
-      <div class="text-center">
-        <div
-          class="mb-3"
-          data-aos="fade-up"
-          data-aos-once="true"
-          data-aos-duration="1000"
-        >
-          <input
-            type="text"
-            name="user_name"
-            v-model="name"
-            placeholder="name"
-            class="pinput"
-            :class="{
-              pgray: !nightMode,
-              'pgray-dark': nightMode,
-              'text-light': nightMode,
-            }"
-            style="transition-delay: 0.2s"
-          />
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <form @submit.prevent="sendEmail">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" v-model="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" v-model="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="5" v-model="text" required></textarea>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </div>
+          </form>
         </div>
-
-        <div
-          class="my-3"
-          data-aos="fade-up"
-          data-aos-once="true"
-          data-aos-duration="1000"
-        >
-          <input
-            type="email"
-            name="user_email"
-            v-model="email"
-            placeholder="email"
-            class="pinput"
-            :class="{
-              pgray: !nightMode,
-              'pgray-dark': nightMode,
-              'text-light': nightMode,
-            }"
-            style="transition-delay: 0.4s"
-          />
-        </div>
-
-        <div
-          class="my-3"
-          data-aos="fade-up"
-          data-aos-once="true"
-          data-aos-duration="1000"
-        >
-          <textarea
-            name="message"
-            v-model="text"
-            placeholder="message"
-            class="pinput"
-            rows="4"
-            :class="{
-              pgray: !nightMode,
-              'pgray-dark': nightMode,
-              'text-light': nightMode,
-            }"
-            style="transition-delay: 0.6s"
-          ></textarea>
-        </div>
-
-        <button
-          @click.prevent="sendEmail"
-          class="mt-1 btn mb-3"
-          data-aos="fade"
-          data-aos-once="true"
-          data-aos-duration="1000"
-          data-aos-offset="50"
-        >
-          Send
-        </button>
       </div>
-
-      <Snackbar
-        :showSnackbar="showSnackbar"
-        @close="closeSnackbar"
-        :snackbarMessage="snackbarMessage"
-        :snackbarColor="snackbarColor"
-      />
     </div>
+    <Snackbar :showSnackbar="showSnackbar" @close="closeSnackbar" :snackbarMessage="snackbarMessage" :snackbarColor="snackbarColor" />
   </div>
 </template>
 
 <script>
 import config from "../../config";
 import emailjs from "emailjs-com";
-
-import Snackbar from "./helpers/Snackbar";
+import Snackbar from "./helpers/Snackbar.vue";
 
 export default {
   name: "Contact",
@@ -129,8 +48,8 @@ export default {
   },
   data() {
     return {
-      email: "",
       name: "",
+      email: "",
       text: "",
       showSnackbar: false,
       snackbarMessage: "",
@@ -148,14 +67,14 @@ export default {
     sendEmail() {
       if (!this.email || !this.name || !this.text) {
         this.showSnackbar = true;
-        this.snackbarMessage = "Please all the fields";
-        this.snackbarColor = "rgb(212, 149, 97)";
+        this.snackbarMessage = "Please fill all the fields";
+        this.snackbarColor = "rgb(212, 149, 97)"; // This should be updated to a new color
       } else {
         var obj = {
           user_email: this.email,
           from_name: this.name,
           message_html: this.text,
-          to_name: "Ronyell Henrique",
+          to_name: "Ronyell Henrique", // This should be changed to the user's name
         };
 
         emailjs
@@ -168,17 +87,16 @@ export default {
           .then(
             (result) => {
               this.showSnackbar = true;
-              this.snackbarMessage = "Thanks! Message recieved.";
-              this.snackbarColor = "#1aa260";
-
+              this.snackbarMessage = "Thanks! Message received.";
+              this.snackbarColor = "var(--secondary-color)";
+              this.name = "";
               this.email = "";
               this.text = "";
-              this.name = "";
             },
             (error) => {
               this.showSnackbar = true;
               this.snackbarMessage = "Oops! Something went wrong.";
-              this.snackbarColor = "rgb(212, 149, 97)";
+              this.snackbarColor = "#dc3545"; // Bootstrap's danger color
             }
           );
       }
@@ -188,67 +106,43 @@ export default {
 </script>
 
 <style scoped>
-.title {
-  font-size: 30px;
-  font-weight: 500;
-}
-.title1 {
-  font-size: 24px;
-  font-weight: 400;
-}
-
-.title2 {
-  font-size: 20px;
-  font-weight: 400;
+.title-divider {
+  width: 100px;
+  height: 4px;
+  background-color: var(--primary-color);
+  margin: 1rem auto;
+  border-radius: 2px;
 }
 
-.title3 {
-  font-size: 16px;
-  font-weight: 400;
+.form-control {
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    border: 1px solid #ced4da;
 }
 
-.pinput {
-  font-size: 18px;
-  outline: none;
-  border: none;
-  border-radius: 7px;
-  padding: 10px;
-  width: 50%;
-  transition: all 1s;
+.night-mode .form-control {
+    background-color: #3a3a3a;
+    color: var(--text-color);
+    border-color: #6c757d;
 }
 
-.btn {
-  border-color: #669db3ff;
-  color: #669db3ff;
-  width: 50%;
+.form-control:focus {
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
 }
 
-.btn:hover {
-  background-color: #669db3ff;
-  border-color: #669db3ff;
-  color: white;
+.night-mode .form-control:focus {
+    background-color: #3a3a3a;
+    color: var(--text-color);
 }
 
-.btn:focus {
-  background-color: #669db3ff;
-  border-color: #669db3ff;
-  color: white;
-}
-
-.pgray-dark {
-  background-color: #3c4148 !important;
-}
-
-@media screen and (max-width: 1000px) {
-  .pinput {
-    width: 90%;
-  }
-  .pinput {
-    width: 90%;
-  }
-
-  .btn {
-    width: 90%;
-  }
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--surface-color);
+    padding: 12px 30px;
+    font-weight: bold;
 }
 </style>

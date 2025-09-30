@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :class="{ 'text-dark': !nightMode, 'text-light': nightMode }">
+  <div id="app" :class="{ 'night-mode': nightMode }">
     <Navbar @scroll="scrollTo" @nightMode="switchMode" :nightMode="nightMode" />
     <div class="parent">
       <Home :nightMode="nightMode" />
@@ -76,24 +76,49 @@ export default {
 </script>
 
 <style>
+:root {
+  --background-color: #f4f5f7;
+  --surface-color: #ffffff;
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --text-color: #2c3e50;
+  --heading-color: #34495e;
+  --border-radius: 12px;
+  --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+:root.night-mode {
+  --background-color: #1a1a1a;
+  --surface-color: #2c2c2c;
+  --primary-color: #bb86fc;
+  --secondary-color: #03dac6;
+  --text-color: #e0e0e0;
+  --heading-color: #ffffff;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: "Roboto", sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
 #app {
   font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
   width: 100%;
 }
 
-@media screen and (max-width: 580px) {
-  #app {
-    width: fit-content;
-  }
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+  color: var(--heading-color);
+  font-weight: 700;
 }
 
 .parent {
-  margin-top: 38px;
-  padding-top: 40px;
   position: relative;
+  padding-top: 60px; /* Adjusted for a fixed navbar */
 }
 
 .pgray {
@@ -116,134 +141,44 @@ export default {
   transition: all 0.5s !important;
 }
 
-/* To set scrollbar width */
+/* Modern Scrollbar */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 8px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 9px;
-  border: 2px solid white; /* Use your background color instead of White */
-  background-clip: content-box;
+  background: var(--surface-color);
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #AEAEAE;
-  border-radius: 9px;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  border: 2px solid var(--surface-color);
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #949494;
+  background-color: #2980b9;
 }
 
+.night-mode ::-webkit-scrollbar-thumb:hover {
+  background-color: #9a65d9;
+}
+
+/* Tooltip styles - can be refactored later */
 .tooltip {
   display: block !important;
   z-index: 10000;
 }
 
 .tooltip .tooltip-inner {
-  background: #64808E;
-  color: white;
+  background: var(--heading-color);
+  color: var(--background-color);
   border-radius: 8px;
-  font-size: 10px;
-  /* padding: 5px 10px 4px; */
+  font-size: 12px;
+  padding: 8px 12px;
 }
 
 .tooltip .tooltip-arrow {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  position: absolute;
-  margin: 5px;
-  border-color: #64808E;
-  z-index: 1;
-}
-
-.tooltip[x-placement^="top"] {
-  margin-bottom: 5px;
-}
-
-.tooltip[x-placement^="top"] .tooltip-arrow {
-  border-width: 5px 5px 0 5px;
-  border-left-color: transparent !important;
-  border-right-color: transparent !important;
-  border-bottom-color: transparent !important;
-  bottom: -5px;
-  left: calc(50% - 5px);
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.tooltip[x-placement^="bottom"] {
-  margin-top: 10px;
-}
-
-.tooltip[x-placement^="bottom"] .tooltip-arrow {
-  border-width: 0 5px 5px 5px;
-  border-left-color: transparent !important;
-  border-right-color: transparent !important;
-  border-top-color: transparent !important;
-  top: -5px;
-  left: calc(50% - 5px);
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.tooltip[x-placement^="right"] {
-  margin-left: 5px;
-}
-
-.tooltip[x-placement^="right"] .tooltip-arrow {
-  border-width: 5px 5px 5px 0;
-  border-left-color: transparent !important;
-  border-top-color: transparent !important;
-  border-bottom-color: transparent !important;
-  left: -5px;
-  top: calc(50% - 5px);
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.tooltip[x-placement^="left"] {
-  margin-right: 5px;
-}
-
-.tooltip[x-placement^="left"] .tooltip-arrow {
-  border-width: 5px 0 5px 5px;
-  border-top-color: transparent !important;
-  border-right-color: transparent !important;
-  border-bottom-color: transparent !important;
-  right: -5px;
-  top: calc(50% - 5px);
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.tooltip.popover .popover-inner {
-  background: #f9f9f9;
-  color: black;
-  padding: 24px;
-  border-radius: 5px;
-  box-shadow: 0 5px 30px rgba(black, 0.1);
-}
-
-.tooltip.popover .popover-arrow {
-  border-color: #f9f9f9;
-}
-
-.tooltip[aria-hidden="true"] {
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.5s, visibility 0.5s;
-}
-
-.tooltip[aria-hidden="false"] {
-  visibility: visible;
-  opacity: 1;
-  transition: opacity 0.5s;
+  border-color: var(--heading-color);
 }
 </style>

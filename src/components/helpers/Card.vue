@@ -1,55 +1,15 @@
 <template>
-  <div class="my-3 mx-3">
-    <div
-      class="card smcard"
-      :class="{
-        'pcard-dark': nightMode,
-        pcard: !nightMode,
-        'bg-dark3': nightMode,
-      }"
-    >
-      <div style="height: 180px;">
-        <img
-          class="card-img-top"
-          :src="portfolio.pictures[0].img"
-          alt="Card image cap"
-        />
+  <div class="card h-100" :class="{ 'night-mode': nightMode }">
+    <img :src="portfolio.pictures[0].img" class="card-img-top" alt="Portfolio Image">
+    <div class="card-body d-flex flex-column">
+      <h5 class="card-title fw-bold">{{ portfolio.name }}</h5>
+      <div class="d-flex flex-wrap mb-2">
+          <span v-for="tech in portfolio.technologies" :key="tech" class="badge me-2 mb-2">{{ tech }}</span>
       </div>
-      <div class="card-body pborder-top">
-        <h5 class="title2">{{ portfolio.name }}</h5>
-        <div>
-          <div class="pb-1 bheight">
-            <span
-              class="badge mr-2 mb-2 "
-              v-for="tech in portfolio.technologies"
-              :key="tech"
-              :class="{ 'bg-dark4': nightMode }"
-              >{{ tech }}</span
-            >
-          </div>
-          <p
-            class="title3 m-0 pb-2 pheight pt-1"
-            v-html="portfolio.description"
-          >
-          </p>
-        </div>
-        <div class="text-center mt-2">
-          <!-- <button
-            href=""
-            class="btn-sm btn btn-outline-secondary no-outline ml-4"
-            @click.prevent="showModal"
-          >
-            read more
-          </button> -->
-          <button
-            href="#"
-            class="btn-sm btn btn-outline-secondary no-outline ml-4"
-            v-if="portfolio.visit"
-            @click.prevent="open(portfolio.visit)"
-          >
-            visit website
-          </button>
-        </div>
+      <p class="card-text flex-grow-1">{{ portfolio.description }}</p>
+      <div class="mt-auto text-center">
+        <a v-if="portfolio.visit" :href="portfolio.visit" target="_blank" class="btn btn-sm btn-outline-primary">Visit Website</a>
+        <button @click="$emit('show', portfolio)" class="btn btn-sm btn-primary ms-2">Details</button>
       </div>
     </div>
   </div>
@@ -66,145 +26,71 @@ export default {
       type: Boolean,
     },
   },
-  methods: {
-    open(url) {
-      window.open(url, "_blank");
-    },
-    showModal() {
-      this.$emit("show", this.portfolio);
-    },
-  },
 };
 </script>
 
 <style scoped>
-img {
-  border-top-left-radius: 7px;
-  border-top-right-radius: 7px;
-  max-width: 100%;
-  max-height: 100%;
+.card {
+  background-color: var(--surface-color);
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+}
+
+.card-img-top {
+  height: 200px;
   object-fit: cover;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
 }
 
-.img-div img {
-  /* object-fit: cover;
-    overflow: hidden; */
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  /* object-position: 50% 120%;
-    max-width: 300px !important; */
+.card-body {
+  color: var(--text-color);
 }
 
-.bheight {
-  height: 65px;
-  overflow: auto;
-}
-
-.pheight {
-  height: 110px;
-  max-height: 130px;
-  overflow: auto;
-  text-align: justify;
-}
-
-div.img-div {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-.pborder-top {
-  border-top: 1px solid rgb(193, 193, 193);
-}
-
-.pcard {
-  background-color: rgb(255, 255, 255);
-  border-radius: 7px;
-  border: none;
-  box-shadow: 1px 1px 12px rgb(233, 233, 233);
-  transition: all 0.5s;
-  height: 460px;
-}
-
-.pcard:hover {
-  transition: all 0.5s;
-  /* cursor: pointer; */
-  box-shadow: 1px 1px 15px rgb(216, 216, 216);
-}
-
-.pcard-dark {
-  border-radius: 7px;
-  border: none;
-  background-color: #30363a !important;
-  /* box-shadow: 1px 1px 12px rgb(53, 53, 53); */
-  transition: all 0.5s;
-  height: 460px;
-}
-
-.pcard-dark:hover {
-  transition: all 0.5s;
-  /* cursor: pointer; */
-  box-shadow: 1px 1px 12px rgb(53, 53, 53);
-}
-
-.pcard-body {
-  border-top: 1px solid rgb(220, 220, 220);
-  z-index: -1;
-  background-color: rgb(253, 254, 255);
-}
-
-.title {
-  font-size: 30px;
-  font-weight: 500;
-}
-.title1 {
-  font-size: 24px;
-  font-weight: 400;
-}
-
-.title2 {
-  font-size: 20px;
-  font-weight: 400;
-}
-
-.title3 {
-  font-size: 16px;
-  font-weight: 400;
+.card-title {
+    color: var(--heading-color);
 }
 
 .badge {
-background-color: rgb(211, 227, 233);
-  transition: all 0.5s;
-  font-weight: 500;
-  font-size: 13px;
+  background-color: var(--primary-color);
+  color: var(--surface-color);
 }
 
-.btn {
-  border-color: #669db3ff;
-  color: #669db3ff;
+.night-mode .badge {
+    background-color: var(--secondary-color);
+    color: #000;
 }
 
-.btn:hover {
-  background-color: #669db3ff;
-  border-color: #669db3ff;
-  color: white;
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--surface-color);
 }
 
-.btn:focus {
-  background-color: #669db3ff;
-  border-color: #669db3ff;
-  color: white;
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
 }
 
-.bg-dark3 {
-  background-color: rgb(82, 82, 82);
+.night-mode .btn-primary:hover {
+    background-color: #9a65d9;
+    border-color: #9a65d9;
 }
 
-.bg-dark4 {
-  background-color: #494e55 !important;
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
-.ml-4 {
-  margin-left: 0rem!important;
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: var(--surface-color);
 }
 </style>
