@@ -83,6 +83,14 @@ let info = {
       description: "Part of a team including project managers and developers to create technical REST API Services, manage servers, and ensure code quality.",
       skills: ["Java", "Springboot","Oracle,","Agile Framework","Zul Server","Security","Microservices","CI/CD", "Tomcat"]
     },
+    {
+      name: "PT Bank BSI",
+      place: "Jakarta, Indonesia",
+      date: "Nov 2023 - Des 2024",
+      position: "Backend Developer",
+      description: "manage service and deployment core banking T24 developer",
+      skills: ["Java", "Springboot","Oracle,","Agile Framework","Zul Server","Security","Microservices","CI/CD", "Tomcat"]
+    },
   ],
   skills: [
     // {
