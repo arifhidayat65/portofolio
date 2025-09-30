@@ -1,35 +1,25 @@
 <template>
-  <div>
-    <div
-      id="snackbar"
-      :class="{ show: showSnackbar }"
-      :style="{ 'background-color': snackbarColor }"
-    >
+  <transition name="snackbar-fade">
+    <div v-if="showSnackbar" class="snackbar" :style="{ backgroundColor: snackbarColor }">
       {{ snackbarMessage }}
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
 export default {
   name: "Snackbar",
   props: {
-    showSnackbar: {
-      type: Boolean,
-    },
-    snackbarMessage: {
-      type: String,
-    },
-    snackbarColor: {
-      type: String,
-    },
+    showSnackbar: Boolean,
+    snackbarMessage: String,
+    snackbarColor: String,
   },
   watch: {
-    showSnackbar(nv) {
-      if (nv) {
+    showSnackbar(newValue) {
+      if (newValue) {
         setTimeout(() => {
           this.$emit("close", false);
-        }, 1900);
+        }, 3000);
       }
     },
   },
@@ -37,69 +27,23 @@ export default {
 </script>
 
 <style scoped>
-#snackbar {
-  visibility: hidden;
-  min-width: 250px;
-  margin-left: -125px;
-  color: #fff;
-  text-align: center;
-  border-radius: 7px;
-  padding: 16px;
+.snackbar {
   position: fixed;
-  z-index: 1;
-  left: 50%;
-  float: right;
-  top: 100px;
-  font-size: 17px;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px 25px;
+  border-radius: var(--border-radius);
+  color: white;
+  font-weight: 500;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 1051;
 }
 
-#snackbar.show {
-  visibility: visible;
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+.snackbar-fade-enter-active, .snackbar-fade-leave-active {
+  transition: opacity 0.5s, transform 0.5s;
 }
-
-@-webkit-keyframes fadein {
-  from {
-    top: 0;
-    opacity: 0;
-  }
-  to {
-    top: 100px;
-    opacity: 1;
-  }
-}
-
-@keyframes fadein {
-  from {
-    top: 0;
-    opacity: 0;
-  }
-  to {
-    top: 100px;
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fadeout {
-  from {
-    top: 100px;
-    opacity: 1;
-  }
-  to {
-    top: 0;
-    opacity: 0;
-  }
-}
-
-@keyframes fadeout {
-  from {
-    top: 30px;
-    opacity: 1;
-  }
-  to {
-    top: 0;
-    opacity: 0;
-  }
+.snackbar-fade-enter, .snackbar-fade-leave-to {
+  opacity: 0;
+  transform: translateY(20px);
 }
 </style>

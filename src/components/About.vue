@@ -1,34 +1,15 @@
 <template>
-  <div
-    class="py-4 p-st"
-    :class="{
-      'bg-light': !nightMode,
-      'bg-dark2': nightMode,
-      'text-light': nightMode,
-    }"
-  >
+  <div class="py-5" :class="{ 'bg-light': !nightMode, 'bg-dark': nightMode }">
     <div class="container">
-      <div
-        class="text-center"
-        data-aos="fade"
-        data-aos-once="true"
-        data-aos-duration="1000"
-      >
-        <span
-          class="title text-center"
-          :class="{ pgray: !nightMode, 'text-light': nightMode }"
-          >About Me.</span
-        >
+      <div class="text-center mb-5" data-aos="fade-down" data-aos-duration="1000">
+        <h2 class="display-5 fw-bold">About Me</h2>
+        <div class="title-divider"></div>
       </div>
-      <hr
-        width="50%"
-        :class="{ pgray: !nightMode, 'bg-secondary': nightMode }"
-      />
-      <div class="row">
-        <div class="col-xl-6 col-bg-6 col-md-6 col-sm-12">
+      <div class="row g-5">
+        <div class="col-md-6">
           <Timeline :data="education" :nightMode="nightMode" />
         </div>
-        <div class="col-xl-6 col-bg-6 col-md-6 col-sm-12">
+        <div class="col-md-6">
           <Timeline :data="experience" :nightMode="nightMode" />
         </div>
       </div>
@@ -37,7 +18,7 @@
 </template>
 
 <script>
-import Timeline from "./helpers/Timeline";
+import Timeline from "./helpers/Timeline.vue";
 import info from "../../info";
 
 export default {
@@ -53,11 +34,11 @@ export default {
   data() {
     return {
       education: {
-        title: "education",
+        title: "Education",
         data: info.education,
       },
       experience: {
-        title: "experiences",
+        title: "Experience",
         data: info.experience,
       },
     };
@@ -66,8 +47,11 @@ export default {
 </script>
 
 <style scoped>
-.title {
-  font-size: 30px;
-  font-weight: 500;
+.title-divider {
+  width: 100px;
+  height: 4px;
+  background-color: var(--primary-color);
+  margin: 1rem auto;
+  border-radius: 2px;
 }
 </style>

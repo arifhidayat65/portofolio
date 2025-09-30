@@ -41,18 +41,27 @@ let info = {
   ],
   experience: [
     {
+      name: "PAM JAYA",
+      place: "Jakarta, Indonesia",
+      date: "July 2025 - Present",
+      position: "Software Engineer",
+      description:
+        "Developing and maintaining internal applications for company management.",
+      skills: ["Vue.js", "Node.js", "PostgreSQL", "Docker", "CI/CD","Java Springboot"]
+    },
+    {
       name: "Walden Global Service",
       place: "Bandung, Indonesia",
       date: "1,Jan, 2017 - 29,December, 2018",
       position: "Laravel Php",
       description:
-        "Creat Apps with microservice laravel php and manage server",
+        "Create Apps with microservice laravel php and manage server",
       skills: ["HTML5", "CSS3", "Bootstrap", "JQuery", "Json", "JavaSript", "TypeSript", "es6", "VueJS"]
     },
     {
       name: "Indocyber Global Service",
       place: "Jakarta, Indonesia",
-      date: "Jan 2018 - Des 2019",
+      date: "Jan 2018 - Dec 2019",
       position: "React Web Developer",
       description:"First I worked as a backend developer, then I became a fullstack developer solving front-end and back-end issues."
         ,
@@ -61,7 +70,7 @@ let info = {
     {
       name: "PT Enigmacamp Cipta Humanika",
       place: "Jakarta Indonesia",
-      date: "jun, 2019 - sep, 2021",
+      date: "Jun, 2019 - Sep, 2021",
       position: "Backend Engineer and Front Engineer",
       description: "creating apps and web UI, portal backoffice",
       skills: ["figma", "Adobe XD", "Photoshop", "Illustrator"]
@@ -69,9 +78,17 @@ let info = {
     {
       name: "PT Bank Sinarmas MSIGLIFE",
       place: "Jakarta, Indonesia",
-      date: "Jan 2021 - Des 2022",
+      date: "Jan 2021 - Dec 2022",
       position: "Backend Developer",
-      description: "part of team include project managers and developers to create technically Service ResApi, management server, and Quality Code",
+      description: "Part of a team including project managers and developers to create technical REST API Services, manage servers, and ensure code quality.",
+      skills: ["Java", "Springboot","Oracle,","Agile Framework","Zul Server","Security","Microservices","CI/CD", "Tomcat"]
+    },
+    {
+      name: "PT Bank BSI",
+      place: "Jakarta, Indonesia",
+      date: "Nov 2023 - Des 2024",
+      position: "Backend Developer",
+      description: "manage service and deployment core banking T24 developer",
       skills: ["Java", "Springboot","Oracle,","Agile Framework","Zul Server","Security","Microservices","CI/CD", "Tomcat"]
     },
   ],

@@ -1,55 +1,20 @@
 <template>
   <div>
-    <div class="mx-3 mt-3 mb-5">
-      <div class="row">
-        <div class="col-xl-12 col-bg-12 col-md-12 col-sm-12">
-          <p
-            class="title1"
-            data-aos="fade"
-            data-aos-once="true"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
-            data-aos-duration="1000"
-          >
-            {{ data.title }}
-          </p>
-          <ul
-            class="timeline m-0 pt-1"
-            v-for="(e, idx) in data.data"
-            :key="e.name"
-            :style="{ 'transition-delay': idx / 4.2 + 's' }"
-            data-aos="fade-up"
-            data-offset="10"
-            data-aos-once="true"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
-            data-aos-duration="500"
-          >
-            <li class="m-0 pb-2">
-              <div>
-                <div class="px-2 title2">{{ e.name }}, {{ e.place }}</div>
-                <div class="px-2 title3">
-                  {{ e.degree || e.position }}
-                  {{ e.gpa ? "(" + e.gpa + ")" : "" }}
-                </div>
-                <div class="px-2 date">{{ e.date }}</div>
-                <div class="px-2 pb-2 pt-2" style="text-align: justify;">
-                  {{ e.description }}
-                </div>
-                <span
-                  class="mx-2 badge p-2 mb-2"
-                  v-for="s in e.skills"
-                  :key="s"
-                  :class="{ 'bg-dark2': nightMode }"
-                  >{{ s }}</span
-                >
-                <p class="m-2"></p>
-              </div>
-            </li>
-          </ul>
+    <h3 class="text-center mb-4">{{ data.title }}</h3>
+    <ul class="timeline">
+      <li v-for="(item, index) in data.data" :key="index" class="timeline-item" data-aos="fade-up" :data-aos-delay="index * 100">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h4 class="h5">{{ item.name }}, {{ item.place }}</h4>
+          <h5 class="h6">{{ item.degree || item.position }} {{ item.gpa ? `(${item.gpa})` : '' }}</h5>
+          <div class="text-muted small">{{ item.date }}</div>
+          <p class="mt-2">{{ item.description }}</p>
+          <div>
+            <span v-for="skill in item.skills" :key="skill" class="badge me-2 mb-2">{{ skill }}</span>
+          </div>
         </div>
-      </div>
-    </div>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -68,65 +33,64 @@ export default {
 </script>
 
 <style scoped>
-.title1 {
-  font-size: 24px;
-  font-weight: 500;
+.timeline {
+  list-style: none;
+  padding: 0;
+  position: relative;
 }
 
-.title2 {
-  font-size: 20px;
-  font-weight: 400;
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10px;
+  height: 100%;
+  width: 2px;
+  background: var(--surface-color);
 }
 
-.title3 {
-  font-size: 16px;
-  font-weight: 400;
+.timeline-item {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 30px;
+}
+
+.timeline-marker {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: var(--surface-color);
+  border: 3px solid var(--primary-color);
+  transition: transform 0.3s;
+}
+
+.timeline-item:hover .timeline-marker {
+  transform: scale(1.2);
+}
+
+.timeline-content {
+  background-color: var(--surface-color);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: box-shadow 0.3s;
+}
+
+.timeline-content:hover {
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
 }
 
 .badge {
-  background-color: #bbd4dd;
-  transition: all 0.5s;
+  background-color: var(--primary-color);
+  color: var(--surface-color);
   font-weight: 500;
 }
 
-.date {
-  font-size: 14px;
-  font-weight: 300;
-}
-
-ul.timeline {
-  list-style-type: none;
-  position: relative;
-}
-ul.timeline:before {
-  content: " ";
-  background: #d4d9df;
-  display: inline-block;
-  position: absolute;
-  left: 29px;
-  width: 2px;
-  height: 93%;
-  margin-top: 20px;
-  z-index: 400;
-}
-ul.timeline > li {
-  margin: 20px 0;
-  padding-left: 20px;
-}
-ul.timeline > li:before {
-  content: " ";
-  background: #8585ad;
-  display: inline-block;
-  position: absolute;
-  border-radius: 50%;
-  border: 2px solid #8585ad;
-  left: 20px;
-  width: 25px;
-  height: 25px;
-  z-index: 400;
-}
-
-.bg-dark2 {
-  background-color: #3c4148 !important;
+.night-mode .badge {
+    background-color: var(--secondary-color);
+    color: #000;
 }
 </style>
