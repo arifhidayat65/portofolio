@@ -1,240 +1,123 @@
 <template>
-  <div>
-    <div class="modal-mask">
-      <div class="modal-wrapper">
-        <div
-          class="modal-container"
-          :class="{
-            'bg-light': !nightMode,
-            'bg-dark': nightMode,
-            'text-light': nightMode,
-          }"
-        >
-          <div class="title1 px-4 pt-3">
-            <span :class="{ 'text-light': nightMode }">{{
-              portfolio.name
-            }}</span>
-            <a
-              class="pull-right"
-              style="font-size: 18px;"
-              @click="$emit('close')"
-              ><i class="fas fa-times"></i
-            ></a>
-            <hr
-              class="my-1"
-              :class="{ pgray: !nightMode, 'bg-secondary': nightMode }"
-            />
+  <transition name="modal-fade">
+    <div class="modal-backdrop" @click="$emit('close')">
+      <div class="modal" :class="{ 'night-mode': nightMode }" @click.stop>
+        <header class="modal-header">
+          <h5 class="modal-title">{{ portfolio.name }}</h5>
+          <button type="button" class="btn-close" @click="$emit('close')"></button>
+        </header>
+        <section class="modal-body">
+          <div class="mb-2 text-muted small">
+            <span>{{ portfolio.date }} • {{ portfolio.category }}</span>
           </div>
-          <div class="modal-body my-0 pb-0 px-4 pt-0">
-            <div
-              class="mb-2 date"
-              :class="{ 'text-light': nightMode, pbgray: nightMode }"
-            >
-              <span>{{ portfolio.date }} • {{ portfolio.category }}</span>
-            </div>
-            <div class="pb-1 bheight">
-              <span
-                class="badge mr-2 mb-2"
-                v-for="tech in portfolio.technologies"
-                :key="tech"
-                :class="{ 'bg-dark4': nightMode }"
-                >{{ tech }}</span
-              >
-            </div>
-
-            <div style="text-align: justify;">
-              <span v-html="portfolio.description"></span>
-            </div>
-            <hr />
-            <div>
-              <Gallery :images="portfolio.pictures" :design="true" />
-            </div>
+          <div class="mb-3">
+            <span v-for="tech in portfolio.technologies" :key="tech" class="badge me-2 mb-2">{{ tech }}</span>
           </div>
-
-          <div class="text-center pb-3">
-            <hr
-              class="mt-1 mb-3"
-              :class="{ pgray: !nightMode, 'bg-secondary': nightMode }"
-            />
-            <button class="btn w-25" @click="$emit('close')">close</button>
-          </div>
-        </div>
+          <p v-html="portfolio.description"></p>
+          <Gallery :images="portfolio.pictures" :design="true" />
+        </section>
+        <footer class="modal-footer">
+          <button type="button" class="btn btn-secondary" @click="$emit('close')">Close</button>
+        </footer>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
-import Carousel from "./Carousel";
-import Gallery from "./Gallery";
+import Gallery from "./Gallery.vue";
 
 export default {
-  name: "Modal",
+  name: "DesignModal",
   components: {
-    Carousel,
     Gallery,
   },
   props: {
-    showModal: {
-      type: Boolean,
-    },
-    portfolio: {
-      type: Object,
-    },
-    nightMode: {
-      type: Boolean,
-    },
-  },
-  created() {
-    document.getElementsByTagName("body")[0].classList.add("modal-open");
-  },
-  methods: {
-    open(url) {
-      window.open(url, "_blank");
-    },
+    portfolio: Object,
+    nightMode: Boolean,
   },
 };
 </script>
 
 <style scoped>
-body.modal-open {
-  overflow: hidden;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-  transition: all 0.2s;
-  cursor: pointer;
-}
-
-a:hover {
-  transition: all 0.2s;
-  color: gray;
-}
-
-.date {
-  font-size: 14px;
-  font-weight: 400;
-}
-.modal-mask {
+.modal-backdrop {
   position: fixed;
-  z-index: 9998;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  transition: opacity 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
 }
 
-.modal-wrapper {
-  width: 100%;
-  height: 100%;
+.modal {
+  background-color: var(--surface-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  width: 80%;
+  max-width: 800px;
+  max-height: 90vh;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+}
+
+.modal-header,
+.modal-footer {
+  padding: 1rem;
+  border-bottom: 1px solid #dee2e6;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
-.modal-container {
-  width: 40%;
-  max-height: 70%;
-  margin: 0px auto;
-  border-radius: 7px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
-  transition: all 0.3s ease;
-  flex-direction: column;
-  display: flex; /*added*/
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+  border-bottom: none;
 }
 
-@media screen and (max-width: 1600px) {
-  .modal-container {
-    width: 60%;
-  }
+.night-mode .modal-header, .night-mode .modal-footer {
+    border-color: #4d4d4d;
 }
 
-@media screen and (max-width: 1200px) {
-  .modal-container {
-    width: 80%;
-  }
-}
-
-@media screen and (max-width: 580px) {
-  .modal-container {
-    width: 90%;
-  }
+.modal-title {
+  color: var(--heading-color);
+  font-weight: 700;
 }
 
 .modal-body {
-  margin: 20px 0;
-  overflow-y: scroll;
-  max-height: inherit;
+  padding: 1rem;
+  overflow-y: auto;
+  color: var(--text-color);
 }
 
-.modal-enter {
-  opacity: 0;
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-color);
 }
 
-.modal-leave-active {
-  opacity: 0;
-}
-
-.modal-enter .modal-container,
-.modal-leave-active .modal-container {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
-.title {
-  font-size: 30px;
-  font-weight: 500;
-}
-.title1 {
-  font-size: 24px;
-  font-weight: 400;
-}
-
-.title2 {
-  font-size: 20px;
-  font-weight: 400;
-}
-
-.title3 {
-  font-size: 16px;
-  font-weight: 500;
+.night-mode .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
 }
 
 .badge {
-  background-color: #bbd4dd;
-  transition: all 0.5s;
-  font-weight: 500;
+  background-color: var(--primary-color);
+  color: var(--surface-color);
 }
 
-.badge:hover {
-  transition: all 0.5s;
-  box-shadow: 2px 2px 5px rgb(179, 179, 179);
+.night-mode .badge {
+    background-color: var(--secondary-color);
+    color: #000;
 }
 
-.btn {
-  border-color: #759CC9;
-  color: #759CC9;
+.modal-fade-enter-active, .modal-fade-leave-active {
+  transition: opacity 0.3s;
 }
-
-.btn:hover {
-  background-color: #759CC9;
-  border-color: #759CC9;
-  color: white;
-}
-
-.btn:focus {
-  background-color: #759CC9;
-  border-color: #759CC9;
-  color: white;
-}
-
-.bg-dark4 {
-  background-color: #494e55 !important;
+.modal-fade-enter, .modal-fade-leave-to {
+  opacity: 0;
 }
 </style>
